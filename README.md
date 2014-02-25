@@ -1,4 +1,4 @@
-# Windows XML Task
+# Puppet Windows XML Task
 
 
 ##Overview
