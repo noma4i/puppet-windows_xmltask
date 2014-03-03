@@ -3,7 +3,7 @@ define windows_xmltask($taskname = $title, $xmlfile, $overwrite = 'false', $ensu
     fail('valid values for ensure are \'present\' or \'absent\'')
   }
   $null = '$null'
-  $temp_filename = fqdn_rand(3000, '$taskname')
+  $temp_filename = fqdn_rand(3000, "$taskname")
   if ($ensure == 'present') {
     if ($overwrite == 'true'){
       $is_force = '-Force'
