@@ -1,5 +1,5 @@
 name    'noma4i/windows_xmltask'
-version '0.0.2'
+version '0.1.2'
 author 'noma4i'
 license 'Apache'
 summary 'Create windows schedule task from exported xml stored on puppet fileserver'
