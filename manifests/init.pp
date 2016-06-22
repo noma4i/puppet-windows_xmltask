@@ -1,6 +1,6 @@
 define windows_xmltask($taskname = $title, $xmlfile, $overwrite = false, $ensure = 'present') {
   if ! ($ensure in [ 'present', 'absent' ]) {
-    fail('valid values for ensure are \'present\' or \'absent\'')
+    fail("valid values for ensure are 'present' or 'absent'")
   }
   $null  = '$null'
   $false = '$false'
@@ -16,7 +16,7 @@ define windows_xmltask($taskname = $title, $xmlfile, $overwrite = false, $ensure
     exec { "Importing task ${taskname}":
       command  => "
         Try{
-          Register-ScheduledTask -Xml (get-content 'C:\Windows\Temp\${taskname}.xml' | out-string) -TaskName '${taskname}' ${is_force}
+          Register-ScheduledTask -Xml (get-content 'C:\\Windows\\Temp\\${taskname}.xml' | out-string) -TaskName '${taskname}' ${is_force}
         }
         Catch{
           exit 0
