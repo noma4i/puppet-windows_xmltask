@@ -1,8 +1,13 @@
-define windows_xmltask($taskname = $title, $xmlfile, $overwrite = false, $ensure = 'present') {
+define windows_xmltask(
+  $taskname = $title,
+  $xmlfile,
+  $overwrite = false,
+  $ensure = 'present'
+) {
   if ! ($ensure in [ 'present', 'absent' ]) {
     fail("valid values for ensure are 'present' or 'absent'")
   }
-  
+
   $null  = '$null'
   $false = '$false'
   if ($ensure == 'present') {
