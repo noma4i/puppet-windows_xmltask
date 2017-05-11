@@ -16,7 +16,5 @@
        "2012R2"
      ]
    }],
-   "dependencies": [{
-     "version_requirement": ">=3.0.0 <5.0.0"
-   }]
+   "dependencies": []
  }

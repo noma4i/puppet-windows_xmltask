@@ -1,0 +1,29 @@
+{
+  "name": "noma4i/windows_xmltask",
+  "version": "0.1.4",
+  "author": "noma4i",
+  "summary": "Create windows schedule task from exported xml stored on puppet fileserver",
+  "license": "Apache-2.0",
+  "source": "https://github.com/noma4i/puppet-windows_xmltask",
+  "project_page": "https://forge.puppet.com/noma4i/windows_xmltask",
+  "issues_url": "https://github.com/noma4i/puppet-windows_xmltask/issues",
+  "dependencies": [
+  
+  ],
+  "data_provider": null,
+  "tags": [
+    "scheduler",
+    "tasks",
+    "windows"
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Windows",
+      "operatingsystemrelease": [
+        "2008R2",
+        "2012",
+        "2012R2"
+      ]
+    }
+  ]
+}
