@@ -1,8 +1,8 @@
 define windows_xmltask(
   $taskname = $title,
-  $xmlfile,
   $overwrite = false,
-  $ensure = 'present'
+  $ensure = 'present',
+  $xmlfile
 ) {
   if ! ($ensure in [ 'present', 'absent' ]) {
     fail("valid values for ensure are 'present' or 'absent'")
@@ -18,8 +18,8 @@ define windows_xmltask(
       ensure             => file,
       source_permissions => 'ignore',
       source             => $xmlfile,
-    } ->
-    exec { "Importing task ${taskname}":
+    }
+    -> exec { "Importing task ${taskname}":
       command  => "
         Try{
           Register-ScheduledTask -Xml (get-content '${xmltask_temp_dir}\\${taskname}.xml' | out-string) -TaskName '${taskname}' ${is_force}

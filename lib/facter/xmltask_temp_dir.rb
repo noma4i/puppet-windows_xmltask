@@ -24,7 +24,7 @@ Facter.add('xmltask_temp_dir') do
           value = nil
         end
       end
-      
+
       value
     end
   end
