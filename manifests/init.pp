@@ -13,6 +13,8 @@ define windows_xmltask(
   if ($ensure == 'present') {
     if ($overwrite == true){
       $is_force = '-Force'
+    } else {
+      $is_force = ''
     }
     file {"${xmltask_temp_dir}\\${taskname}.xml":
       ensure             => file,
