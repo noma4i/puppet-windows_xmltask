@@ -1,15 +1,15 @@
 # Puppet Windows XML Task
 
 
-##Overview
+## Overview
 
 Creating windows schedule task from previously exported.
 
-##Module Description
+## Module Description
 
 Windows schedule tasks are tricky. Sometimes you need to setup very special attributes like *parallel process run*. I have ended with simple solution: create task via GUI and export as xml file and import it later.
 
-##Usage
+## Usage
 
 
 	windows_xmltask {'My Task Name':
@@ -19,7 +19,7 @@ Windows schedule tasks are tricky. Sometimes you need to setup very special attr
   	}
 
 
-##License
+## License
 
 [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html)
 
