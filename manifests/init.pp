@@ -8,8 +8,6 @@ define windows_xmltask(
     fail("valid values for ensure are 'present' or 'absent'")
   }
 
-  $null  = '$null'
-  $false = '$false'
   if ($ensure == 'present') {
     if ($overwrite == true){
       $is_force = '-Force'
@@ -31,14 +29,14 @@ define windows_xmltask(
         }
       ",
       provider => powershell,
-      onlyif   => "if( ((Get-ScheduledTask '${taskname}') -eq ${null}) -Or ('${overwrite}' -eq 'true')){ exit 0 }else{ exit 1 }",
+      onlyif   => "if( ((Get-ScheduledTask '${taskname}') -eq ${literal($null)}) -Or ('${overwrite}' -eq 'true')){ exit 0 }else{ exit 1 }",
       require  => File["${xmltask_temp_dir}\\${taskname}.xml"],
     }
   }else{
     exec { "Removing task ${taskname}":
       command  => "
         Try{
-          Unregister-ScheduledTask -TaskName '${taskname}' -Confirm:${false}
+          Unregister-ScheduledTask -TaskName '${taskname}' -Confirm:${literal($false)}
         }
         Catch{
           exit 0
